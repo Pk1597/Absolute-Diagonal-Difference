@@ -1,0 +1,27 @@
+# defining the function diagonalDifference with sum_1=0 and sum_2=0
+def diagonalDifference(L):
+    sum_1=0
+    sum_2=0
+    # initializing a for loop to continue along the diagonals of the list
+    # sum_1 along the main diagonals so along [i][i]
+    # sum_2 along the other diagonal from the other corner
+    # since i range from 0 to n-1 we have to subtract i from the n-1
+    for i in range(0,n):
+        sum_1 = sum_1+int(L[i][i])
+        sum_2 = sum_2+int(L[i][n-i-1])
+    #calculating the absolute of the sum difference
+    total=abs(sum_1-sum_2)
+    return total
+#getting an input for the number of rows and columns where rows=cols in this case
+n = int(input())
+#initializing a empty list
+L=[]
+# intializing for loop to get the array values
+for i in range (0,n):
+    # spliting the values with spaces to strings with commas
+    arr = input().split()
+    # appending the value of array to the list L
+    L.append(arr)
+#calculating the result using the defined function "diagonalDifference"
+    result = diagonalDifference(L)
+print(result)
